@@ -1,1 +1,1 @@
-print('haha')
+print('0000')
