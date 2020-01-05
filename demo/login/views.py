@@ -15,5 +15,6 @@ def login(request):
 
 def center(request):
     url = reverse('hello')
+    print(url)
     return redirect(url)
     # return HttpResponse('用户中心')
