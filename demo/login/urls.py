@@ -1,7 +1,9 @@
-from django.conf.urls import url, include
+from django.conf.urls import url
 
 from . import views
 
 urlpatterns = [
-    url(r'^d*/$', views.index),
+    url(r'^c*/$', views.index),
+    url(r'^login/$', views.login,name='login'),
+    url(r'^center/$', views.center)
 ]
