@@ -5,10 +5,9 @@ import os
 
 # Create your views here.
 
-def index(request,*args):
-    with open(r'template/index.html', 'rb') as f:
+def index(request, city, year):
+    with open(r'template/index.html', 'r') as f:
         data = f.read()
-    print(args)
-    for i in args:
-        print(i)
-    return HttpResponse(data)
+    data = data.replace('{%content%}', '%s : %s' % (city, year))
+
+    return HttpResponse(data.encode())
