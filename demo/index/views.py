@@ -8,6 +8,7 @@ import os
 def index(request,*args):
     with open(r'template/index.html', 'rb') as f:
         data = f.read()
+    print(args)
     for i in args:
         print(i)
     return HttpResponse(data)
