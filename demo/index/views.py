@@ -5,8 +5,9 @@ import os
 
 # Create your views here.
 
-def index(request):
+def index(request,*args):
     with open(r'template/index.html', 'rb') as f:
         data = f.read()
-        print(data)
+    for i in args:
+        print(i)
     return HttpResponse(data)
