@@ -1,3 +1,4 @@
+{% load oddf %}
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -60,9 +61,22 @@
                     <th>前期高点日期</th>
                     <th>添加自选</th>
             </tr>
-            {%content%}
+            {{content}}
         </table>
     </div>
 </div>
+<div>
+    {{ adict }}
+    {{ adict.name }}
+    {{ alist }}
+    {{ alist.0 }}
+</div>
+<div>
+    {% for foo in alist %}
+        <p>{{ foo|odd }}</p>
+
+    {% endfor %}
+
+</div>
 </body>
-</html>            
+</html>
