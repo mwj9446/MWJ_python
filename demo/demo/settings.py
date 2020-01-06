@@ -89,7 +89,7 @@ DATABASES = {
         'PORT': 3306,  # 数据库端口
         'USER': 'root',  # 数据库用户名
         'PASSWORD': 'maiweijie',  # 数据库用户密码
-        'NAME': 'django_demo'  # 数据库名字
+        'NAME': 'demo'  # 数据库名字
     }
 }
 
