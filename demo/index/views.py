@@ -1,30 +1,29 @@
 import json
-
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import View
 
 
 # Create your views here.
-
 def index(request, city, year):
     # print(1)
     # with open(r'template/index.html', 'r', encoding='utf-8') as f:
     #     data = f.read()
     # data = data.replace('{%content%}', '%s : %s' % (city, year))
     context = {'content': '%s:%s' % (city, year),
-               'adict':{'name':'mwj','sex':'man'},
-               'alist':[1,2,3]
+               'adict': {'name': 'mwj', 'sex': 'man'},
+               'alist': [1, 2, 3]
                }
     return render(request, 'index.html', context)
 
 
 def index2(request):
-    print(2)
+    print(request.user)
     with open(r'template/index.html', 'r', encoding='utf-8') as f:
         data = f.read()
-    city = request.GET.get('city')
+    city = request.GET.get('city', '默认值')
     year = request.GET.get('year')
+
     data = data.replace('{%content%}', '%s : %s' % (city, year))
 
     return HttpResponse(data.encode())

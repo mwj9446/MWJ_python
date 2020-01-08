@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'login.apps.LoginConfig',
     'index.apps.IndexConfig',
+    'booktest.apps.BooktestConfig'
 ]
 
 MIDDLEWARE = [

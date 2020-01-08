@@ -8,7 +8,8 @@ from django.urls import reverse
 def response(request):
     res = HttpResponse(content='自定义响应', content_type='text/html; charset=utf8', status=200)
     res['name'] = 'zhangquandan'
-    return res
+
+    return redirect(reverse('indexxx'))
 
 
 def my_json_response(request):
@@ -22,6 +23,8 @@ def center(request):
 
 
 def set_cookie(request):
+    print(request.COOKIES)
+    print(type(request.COOKIES))
     count = request.COOKIES.get('count')
     if count:
         count = int(count)
@@ -36,12 +39,13 @@ def set_cookie(request):
 
 def set_session(request):
     count = request.session.get('count')
+    print(count)
     if count:
         count = int(count)
         count += 1
     else:
         request.session['count'] = '1'
-    request.session.set_expiry(None)
+    request.session.set_expiry(6000)
     request.session['count']=count
     print(count)
     return HttpResponse('set session')
